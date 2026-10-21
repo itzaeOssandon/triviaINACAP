@@ -72,7 +72,7 @@ function saveBest(score) {
 function shell(content) {
   app.innerHTML = `
     <header class="site-header">
-      <a class="brand" href="/" aria-label="INACAP, volver al inicio"><span class="brand-mark" aria-hidden="true">i</span><span>INACAP<small>APRENDE HACIENDO</small></span></a>
+      <a class="brand" href="/" aria-label="INACAP, volver al inicio"><img class="historic-logo" src="/logo-inacap-historico.jpg" width="147" height="207" alt="Logo histórico de INACAP, filial CORFO"></a>
       <span class="header-edition">EL PASADO TIENE MUCHO QUE CONTAR.</span>
       <button class="fullscreen-button" type="button">${icons.expand}<span>Pantalla completa</span></button>
     </header>

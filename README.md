@@ -96,3 +96,7 @@ En este entorno cloud ya está disponible Chromium. Para usarlo sin descargar ot
 Alternativa desde una máquina con la CLI de Vercel autenticada: `npx vercel --prod`. Este repositorio no contiene credenciales de despliegue.
 
 El modo individual incluye las respuestas en los archivos del navegador; la aplicación está pensada para una actividad recreativa presencial. El duelo tiene salas privadas de dos jugadores con cálculo del resultado en el servidor. No incluye un ranking global. El frontend se construye en `dist`; Vercel despliega además `api/duel.js`, `lib/duel.js` y el SDK de Blob.
+
+## Logo histórico
+
+`public/logo-inacap-historico.jpg` es el archivo original proporcionado por el organizador en `logoinacap.zip`, sin recortes ni retoques. La cabecera conserva su proporción en escritorio y teléfono; se utiliza también como favicon.

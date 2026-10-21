@@ -102,7 +102,7 @@ fieldset {
 }
 .site-header {
   max-width: 1320px;
-  padding: 28px 60px;
+  padding: 18px 60px;
   min-height: 105px;
   margin: auto;
   display: flex;
@@ -112,35 +112,16 @@ fieldset {
   border-bottom: 1px solid var(--line);
 }
 .brand {
-  display: flex;
-  gap: 9px;
+  display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
-  color: #d72729;
-  font-family: Arial, sans-serif;
-  font-size: 29px;
-  font-weight: 900;
-  letter-spacing: -1.6px;
-  line-height: 0.95;
 }
-.brand small {
+.historic-logo {
   display: block;
-  color: var(--ink);
-  font-size: 7px;
-  font-weight: 700;
-  letter-spacing: 1.3px;
-  margin-top: 7px;
-}
-.brand-mark {
-  width: 31px;
-  height: 37px;
-  border: 3px solid #d72729;
-  font-size: 39px;
-  font-weight: 900;
-  text-align: center;
-  line-height: 32px;
-  font-family: Georgia, serif;
-  font-style: italic;
+  width: auto;
+  height: 100px;
+  object-fit: contain;
 }
 .header-edition {
   font-size: 10px;
@@ -1201,7 +1182,7 @@ dialog p {
 }
 @media (max-width: 1000px) {
   .site-header {
-    padding: 23px 32px;
+    padding: 16px 32px;
     min-height: 90px;
   }
   .home,
@@ -1336,25 +1317,14 @@ dialog p {
 }
 @media (max-width: 740px) {
   .site-header {
-    padding: 20px 22px;
+    padding: 14px 22px;
     min-height: 83px;
   }
   .header-edition {
     display: none;
   }
-  .brand {
-    font-size: 25px;
-  }
-  .brand-mark {
-    width: 26px;
-    height: 31px;
-    font-size: 33px;
-    line-height: 25px;
-  }
-  .brand small {
-    font-size: 6px;
-    margin-top: 6px;
-    letter-spacing: 1px;
+  .historic-logo {
+    height: 84px;
   }
   .fullscreen-button {
     font-size: 10px;
