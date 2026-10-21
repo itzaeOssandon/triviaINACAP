@@ -73,11 +73,11 @@ function shell(content) {
   app.innerHTML = `
     <header class="site-header">
       <a class="brand" href="/" aria-label="INACAP, volver al inicio"><img class="historic-logo" src="/logo-inacap-historico.jpg" width="147" height="207" alt="Logo histórico de INACAP, filial CORFO"></a>
-      <span class="header-edition">EL PASADO TIENE MUCHO QUE CONTAR.</span>
+      <span class="header-edition">Alianza blanca · 60s & 70s</span>
       <button class="fullscreen-button" type="button">${icons.expand}<span>Pantalla completa</span></button>
     </header>
     ${content}
-    <footer class="site-footer"><span>Una trivia para conectar generaciones.</span><span>HECHO PARA CURIOSOS <span class="footer-flower" aria-hidden="true">✳︎</span> STAND INACAP</span></footer>
+    <footer class="site-footer"><span>Alianza blanca, conectando generaciones.</span><span>Celebración INACAP 60 años <span class="footer-flower" aria-hidden="true">✳︎</span></span></footer>
     <dialog id="exit-dialog" aria-labelledby="exit-title">
       <form method="dialog"><span class="eyebrow">PAUSA EN EL VIAJE</span><h2 id="exit-title">¿Volvemos al presente?</h2><p>Se perderá el progreso de esta partida.</p><div class="dialog-actions"><button class="secondary-button" value="continue" autofocus>Seguir jugando</button><button class="primary-button" value="exit">Salir de la partida ${icons.arrow}</button></div></form>
     </dialog>`;
@@ -116,9 +116,9 @@ function renderHome(focus = false) {
   shell(`<main id="main" class="home">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow hero-eyebrow"><span class="tiny-star" aria-hidden="true">✳︎</span> BIENVENIDOS A LOS AÑOS 60 & 70</div>
+        <div class="eyebrow hero-eyebrow"><span class="tiny-star" aria-hidden="true">✳︎</span> CELEBRACIÓN INACAP 60 AÑOS</div>
         <h1 id="hero-title" tabindex="-1">La máquina<br>del <span class="title-time">tiempo<svg viewBox="0 0 430 22" preserveAspectRatio="none" aria-hidden="true"><path d="M5 16C110 0 310 0 422 10M14 21C149 7 300 8 409 17" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span><span class="title-dot">.</span></h1>
-        <p class="hero-description">Dos décadas que lo cambiaron todo.<br>¿Cuánto sabes de ellas? Es hora de descubrirlo.</p>
+        <p class="hero-description">Dos décadas que lo cambiaron todo.<br> ¿Cuánto sabes de ellas? Es hora de descubrirlo.</p>
         <div class="hero-facts"><span>5 preguntas</span><span>5 categorías</span><span>Un viaje al pasado</span></div>
       </div>
       <div class="retro-art" aria-hidden="true">
@@ -140,7 +140,7 @@ function renderHome(focus = false) {
       <div class="best-line" id="best-line">Récord ${LEVELS.find((l) => l.id === level).label.toLowerCase()} en este dispositivo: <strong>${bestForLevel().toLocaleString("es-CL")} pts</strong></div>
     </section>
     <section class="category-section" aria-labelledby="categories-title"><div class="category-heading"><span class="eyebrow" id="categories-title">CINCO PARADAS EN EL TIEMPO</span><span>Una pregunta al azar de cada categoría.</span></div><div class="category-list">${CATEGORIES.map((c) => `<div class="category-item"><span class="category-symbol ${c.color}" aria-hidden="true">${c.symbol}</span><span>${c.label}</span></div>`).join("")}</div></section>
-    <p class="demo-note"><span aria-hidden="true">✳︎</span> 75 preguntas · Cinco categorías · Tres niveles para viajar al pasado.</p>
+    <p class="demo-note"><span aria-hidden="true">✳︎</span> Alianza blanca · El conocimiento nunca pasa de moda.</p>
   </main>`);
   document.querySelectorAll('input[name="level"]').forEach((input) =>
     input.addEventListener("change", () => {
@@ -280,7 +280,7 @@ function renderResults() {
       })
       .join(
         "",
-      )}</section><p class="demo-note">Banco del stand · 75 preguntas.</p></main>`);
+      )}</section><p class="demo-note">Alianza blanca · Celebración INACAP 60 años.</p></main>`);
   document.querySelector("#replay").addEventListener("click", startGame);
   document
     .querySelector("#home")
