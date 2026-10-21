@@ -1,0 +1,35 @@
+name: Live start production probe
+on:
+  push:
+    branches: [diagnose-live-start]
+permissions: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Create test room, join two players, and start
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import {randomBytes} from 'node:crypto';
+          const endpoint='https://trivia-inacap.vercel.app/api/live';
+          let host;
+          async function call(action, session={}, extra={}) {
+            const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...session,...extra,action}),signal:AbortSignal.timeout(30000)});
+            const b=await r.json();
+            console.log(JSON.stringify({action,http:r.status,status:b.status,phase:b.phase,players:b.playerCount,error:b.error}));
+            if(!r.ok)throw new Error(`${action}: HTTP ${r.status}: ${b.error}`);
+            return b;
+          }
+          try {
+            const created=await call('create',{}, {level:'facil'});host={code:created.code,token:created.token};
+            for(let i=0;i<2;i++)await call('join',{code:host.code,token:randomBytes(24).toString('hex')},{name:`Prueba tecnica ${i+1}`});
+            await call('state',host);
+            const started=await call('start',host);
+            if(started.status!=='playing'||started.phase!=='question')throw new Error('Start did not transition to the first question');
+            const state=await call('state',host);
+            if(state.status!=='playing')throw new Error('The start was not persisted');
+            console.log('PRODUCTION_START_OK');
+          }finally{if(host)try{await call('cancel',host);}catch(e){console.log('Cleanup failed:',e.message);}}
+          JS
