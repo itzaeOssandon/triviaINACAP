@@ -1,0 +1,1140 @@
+[
+  {
+    "id": "inacap-facil-01",
+    "category": "inacap",
+    "level": "facil",
+    "question": "¿En qué década nació INACAP: los sesenta o los noventa?",
+    "options": [
+      "En los sesenta.",
+      "En los noventa."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En los sesenta.",
+    "sourceQuestion": "¿En qué década nació INACAP: los sesenta o los noventa?",
+    "sourceAnswer": "En los sesenta."
+  },
+  {
+    "id": "inacap-facil-02",
+    "category": "inacap",
+    "level": "facil",
+    "question": "¿INACAP nació para capacitar trabajadores o para organizar espectáculos?",
+    "options": [
+      "Para capacitar trabajadores.",
+      "Para organizar espectáculos."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Para capacitar trabajadores.",
+    "sourceQuestion": "¿INACAP nació para capacitar trabajadores o para organizar espectáculos?",
+    "sourceAnswer": "Para capacitar trabajadores."
+  },
+  {
+    "id": "inacap-facil-03",
+    "category": "inacap",
+    "level": "facil",
+    "question": "¿La formación inicial de INACAP se enfocaba en aprender haciendo o solamente en estudiar teoría?",
+    "options": [
+      "En aprender haciendo.",
+      "Solamente en estudiar teoría."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En aprender haciendo.",
+    "sourceQuestion": "¿La formación inicial de INACAP se enfocaba en aprender haciendo o solamente en estudiar teoría?",
+    "sourceAnswer": "En aprender haciendo."
+  },
+  {
+    "id": "inacap-facil-04",
+    "category": "inacap",
+    "level": "facil",
+    "question": "¿INACAP preparaba a las personas para incorporarse a qué mundo?",
+    "options": [
+      "Al mundo laboral.",
+      "Al mundo del turismo recreativo.",
+      "Al mundo de la ficción.",
+      "Al mundo del deporte profesional."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Al mundo laboral.",
+    "sourceQuestion": "¿INACAP preparaba a las personas para incorporarse a qué mundo?",
+    "sourceAnswer": "Al mundo laboral."
+  },
+  {
+    "id": "inacap-facil-05",
+    "category": "inacap",
+    "level": "facil",
+    "question": "¿INACAP buscaba ofrecer capacitación en distintas regiones o solamente en una ciudad?",
+    "options": [
+      "En distintas regiones.",
+      "Solamente en una ciudad."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En distintas regiones.",
+    "sourceQuestion": "¿INACAP buscaba ofrecer capacitación en distintas regiones o solamente en una ciudad?",
+    "sourceAnswer": "En distintas regiones."
+  },
+  {
+    "id": "inacap-medio-06",
+    "category": "inacap",
+    "level": "medio",
+    "question": "¿En qué año se creó INACAP?",
+    "options": [
+      "En 1966.",
+      "En 1956.",
+      "En 1976.",
+      "En 1986."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En 1966.",
+    "sourceQuestion": "¿En qué año se creó INACAP?",
+    "sourceAnswer": "En 1966."
+  },
+  {
+    "id": "inacap-medio-07",
+    "category": "inacap",
+    "level": "medio",
+    "question": "¿INACAP capacitaba solamente a jóvenes o también a trabajadores adultos?",
+    "options": [
+      "También a trabajadores adultos.",
+      "Solamente a jóvenes."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: También a trabajadores adultos.",
+    "sourceQuestion": "¿INACAP capacitaba solamente a jóvenes o también a trabajadores adultos?",
+    "sourceAnswer": "También a trabajadores adultos."
+  },
+  {
+    "id": "inacap-medio-08",
+    "category": "inacap",
+    "level": "medio",
+    "question": "¿Durante el gobierno de qué presidente nació INACAP?",
+    "options": [
+      "Eduardo Frei Montalva.",
+      "Salvador Allende.",
+      "Jorge Alessandri.",
+      "Patricio Aylwin."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Eduardo Frei Montalva.",
+    "sourceQuestion": "¿Durante el gobierno de qué presidente nació INACAP?",
+    "sourceAnswer": "Eduardo Frei Montalva."
+  },
+  {
+    "id": "inacap-medio-09",
+    "category": "inacap",
+    "level": "medio",
+    "question": "¿Qué buscaba mejorar INACAP en quienes ya trabajaban: sus conocimientos y habilidades o sus vacaciones?",
+    "options": [
+      "Sus conocimientos y habilidades.",
+      "Sus vacaciones."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sus conocimientos y habilidades.",
+    "sourceQuestion": "¿Qué buscaba mejorar INACAP en quienes ya trabajaban: sus conocimientos y habilidades o sus vacaciones?",
+    "sourceAnswer": "Sus conocimientos y habilidades."
+  },
+  {
+    "id": "inacap-medio-10",
+    "category": "inacap",
+    "level": "medio",
+    "question": "¿La formación de INACAP debía responder a las necesidades de las empresas o mantenerse alejada de ellas?",
+    "options": [
+      "Responder a las necesidades de las empresas.",
+      "Mantenerse alejada de ellas."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Responder a las necesidades de las empresas.",
+    "sourceQuestion": "¿La formación de INACAP debía responder a las necesidades de las empresas o mantenerse alejada de ellas?",
+    "sourceAnswer": "Responder a las necesidades de las empresas."
+  },
+  {
+    "id": "inacap-hardcore-11",
+    "category": "inacap",
+    "level": "hardcore",
+    "question": "¿Qué significa la sigla INACAP?",
+    "options": [
+      "Instituto Nacional de Capacitación Profesional.",
+      "Instituto Nacional de Carreras Públicas.",
+      "Instituto de Capacitación Académica de Profesores.",
+      "Instituto Nacional de Cultura y Artes Profesionales."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Instituto Nacional de Capacitación Profesional.",
+    "sourceQuestion": "¿Qué significa la sigla INACAP?",
+    "sourceAnswer": "Instituto Nacional de Capacitación Profesional."
+  },
+  {
+    "id": "inacap-hardcore-12",
+    "category": "inacap",
+    "level": "hardcore",
+    "question": "¿Qué día y mes de 1966 se concedió personalidad jurídica a INACAP?",
+    "options": [
+      "El 21 de octubre.",
+      "El 11 de septiembre.",
+      "El 21 de mayo.",
+      "El 18 de septiembre."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: El 21 de octubre.",
+    "sourceQuestion": "¿Qué día y mes de 1966 se concedió personalidad jurídica a INACAP?",
+    "sourceAnswer": "El 21 de octubre."
+  },
+  {
+    "id": "inacap-hardcore-13",
+    "category": "inacap",
+    "level": "hardcore",
+    "question": "¿Cuál es el número del decreto que concedió personalidad jurídica a INACAP?",
+    "options": [
+      "Decreto N.º 2541.",
+      "Decreto N.º 1541.",
+      "Decreto N.º 3541.",
+      "Decreto N.º 4541."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Decreto N.º 2541.",
+    "sourceQuestion": "¿Cuál es el número del decreto que concedió personalidad jurídica a INACAP?",
+    "sourceAnswer": "Decreto N.º 2541."
+  },
+  {
+    "id": "inacap-hardcore-14",
+    "category": "inacap",
+    "level": "hardcore",
+    "question": "¿A qué organismos estuvo vinculado el desarrollo inicial de INACAP?",
+    "options": [
+      "CORFO o SERCOTEC.",
+      "CONAF o SERNATUR.",
+      "IND o SENAMA.",
+      "SERNAC o SERVEL."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: CORFO o SERCOTEC.",
+    "sourceQuestion": "Menciona uno de los dos organismos a los que estuvo vinculado el desarrollo inicial de INACAP.",
+    "sourceAnswer": "CORFO o SERCOTEC."
+  },
+  {
+    "id": "inacap-hardcore-15",
+    "category": "inacap",
+    "level": "hardcore",
+    "question": "¿Desde qué año la administración de INACAP pasó a un consejo con representación estatal y laboral?",
+    "options": [
+      "Desde 1971.",
+      "Desde 1961.",
+      "Desde 1981.",
+      "Desde 1991."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Desde 1971.",
+    "sourceQuestion": "¿Desde qué año la administración de INACAP pasó a un consejo con representación estatal y laboral?",
+    "sourceAnswer": "Desde 1971."
+  },
+  {
+    "id": "tecnologia-facil-16",
+    "category": "tecnologia",
+    "level": "facil",
+    "question": "Para trabajar con máquinas, ¿era necesario aprender a utilizarlas?",
+    "options": [
+      "Sí.",
+      "No."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sí.",
+    "sourceQuestion": "Para trabajar con máquinas, ¿era necesario aprender a utilizarlas?",
+    "sourceAnswer": "Sí."
+  },
+  {
+    "id": "tecnologia-facil-17",
+    "category": "tecnologia",
+    "level": "facil",
+    "question": "¿Qué trabajador se relaciona directamente con las instalaciones eléctricas: un electricista o un agricultor?",
+    "options": [
+      "Un electricista.",
+      "Un agricultor."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Un electricista.",
+    "sourceQuestion": "¿Qué trabajador se relaciona directamente con las instalaciones eléctricas: un electricista o un agricultor?",
+    "sourceAnswer": "Un electricista."
+  },
+  {
+    "id": "tecnologia-facil-18",
+    "category": "tecnologia",
+    "level": "facil",
+    "question": "Además de operar una máquina, ¿era importante saber mantenerla?",
+    "options": [
+      "Sí.",
+      "No."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sí.",
+    "sourceQuestion": "Además de operar una máquina, ¿era importante saber mantenerla?",
+    "sourceAnswer": "Sí."
+  },
+  {
+    "id": "tecnologia-facil-19",
+    "category": "tecnologia",
+    "level": "facil",
+    "question": "¿La maquinaria se utilizaba solamente en las fábricas o también en la agricultura?",
+    "options": [
+      "También en la agricultura.",
+      "Solamente en las fábricas."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: También en la agricultura.",
+    "sourceQuestion": "¿La maquinaria se utilizaba solamente en las fábricas o también en la agricultura?",
+    "sourceAnswer": "También en la agricultura."
+  },
+  {
+    "id": "tecnologia-facil-20",
+    "category": "tecnologia",
+    "level": "facil",
+    "question": "¿La capacitación técnica enseñaba a utilizar herramientas o a prescindir de ellas?",
+    "options": [
+      "A utilizar herramientas.",
+      "A prescindir de ellas."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: A utilizar herramientas.",
+    "sourceQuestion": "¿La capacitación técnica enseñaba a utilizar herramientas o a prescindir de ellas?",
+    "sourceAnswer": "A utilizar herramientas."
+  },
+  {
+    "id": "tecnologia-medio-21",
+    "category": "tecnologia",
+    "level": "medio",
+    "question": "¿Qué debían aprender a interpretar los trabajadores para comprender dibujos técnicos?",
+    "options": [
+      "Planos.",
+      "Partituras musicales.",
+      "Carteleras de cine.",
+      "Guiones teatrales."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Planos.",
+    "sourceQuestion": "¿Qué debían aprender a interpretar los trabajadores para comprender dibujos técnicos?",
+    "sourceAnswer": "Planos."
+  },
+  {
+    "id": "tecnologia-medio-22",
+    "category": "tecnologia",
+    "level": "medio",
+    "question": "¿Cuál de estos grupos reúne oficios que necesitaba la industria?",
+    "options": [
+      "Mecánico industrial, tornero, soldador u operario especializado.",
+      "Guía turístico, recepcionista o agente de viajes.",
+      "Actor, bailarín o escenógrafo.",
+      "Bibliotecario, editor o traductor."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Mecánico industrial, tornero, soldador u operario especializado.",
+    "sourceQuestion": "Menciona un oficio que necesitaba la industria y que aparece en el texto.",
+    "sourceAnswer": "Mecánico industrial, tornero, soldador u operario especializado."
+  },
+  {
+    "id": "tecnologia-medio-23",
+    "category": "tecnologia",
+    "level": "medio",
+    "question": "¿Qué sector necesitaba capacitación para utilizar nuevas máquinas en las actividades del campo?",
+    "options": [
+      "La agricultura.",
+      "El comercio minorista.",
+      "La producción cinematográfica.",
+      "La hotelería."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La agricultura.",
+    "sourceQuestion": "¿Qué sector necesitaba capacitación para utilizar nuevas máquinas en las actividades del campo?",
+    "sourceAnswer": "La agricultura."
+  },
+  {
+    "id": "tecnologia-medio-24",
+    "category": "tecnologia",
+    "level": "medio",
+    "question": "Además de operar equipos, ¿qué aspecto relacionado con la prevención debían conocer los trabajadores de la minería?",
+    "options": [
+      "Seguridad.",
+      "Publicidad.",
+      "Decoración.",
+      "Protocolo de atención al público."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Seguridad.",
+    "sourceQuestion": "Además de operar equipos, ¿qué aspecto relacionado con la prevención debían conocer los trabajadores de la minería?",
+    "sourceAnswer": "Seguridad."
+  },
+  {
+    "id": "tecnologia-medio-25",
+    "category": "tecnologia",
+    "level": "medio",
+    "question": "¿Los avances tecnológicos aumentaban o disminuían la importancia de la formación profesional?",
+    "options": [
+      "La aumentaban.",
+      "La disminuían."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La aumentaban.",
+    "sourceQuestion": "¿Los avances tecnológicos aumentaban o disminuían la importancia de la formación profesional?",
+    "sourceAnswer": "La aumentaban."
+  },
+  {
+    "id": "tecnologia-hardcore-26",
+    "category": "tecnologia",
+    "level": "hardcore",
+    "question": "¿Qué grupo reúne tres destrezas de la capacitación técnica de los años sesenta?",
+    "options": [
+      "Operar máquinas, mantener equipos e interpretar planos.",
+      "Diseñar anuncios, vender entradas y organizar espectáculos.",
+      "Redactar noticias, editar revistas y presentar programas.",
+      "Reservar hoteles, guiar excursiones y planificar vacaciones."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Tres entre: operar máquinas, mantener equipos, interpretar planos, utilizar herramientas y resolver problemas del trabajo.",
+    "sourceQuestion": "Menciona tres destrezas concretas que debía enseñar la capacitación técnica de los años sesenta.",
+    "sourceAnswer": "Tres entre: operar máquinas, mantener equipos, interpretar planos, utilizar herramientas y resolver problemas del trabajo."
+  },
+  {
+    "id": "tecnologia-hardcore-27",
+    "category": "tecnologia",
+    "level": "hardcore",
+    "question": "¿Qué dos sectores se agrupan al hablar de mantenimiento, electricidad, seguridad y operación de equipos?",
+    "options": [
+      "Minería y energía.",
+      "Comercio y turismo.",
+      "Pesca y hotelería.",
+      "Educación y salud."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Minería y energía.",
+    "sourceQuestion": "¿Qué dos sectores aparecen agrupados en el texto al hablar de mantenimiento, electricidad, seguridad y operación de equipos?",
+    "sourceAnswer": "Minería y energía."
+  },
+  {
+    "id": "tecnologia-hardcore-28",
+    "category": "tecnologia",
+    "level": "hardcore",
+    "question": "Además del uso y la operación, ¿qué otra tarea debían aprender quienes trabajaban con equipos agrícolas?",
+    "options": [
+      "Su mantenimiento.",
+      "Su promoción publicitaria.",
+      "La venta de pasajes.",
+      "La organización de espectáculos."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Su mantenimiento.",
+    "sourceQuestion": "Además del uso y la operación, ¿qué otra tarea debían aprender quienes trabajaban con equipos agrícolas?",
+    "sourceAnswer": "Su mantenimiento."
+  },
+  {
+    "id": "tecnologia-hardcore-29",
+    "category": "tecnologia",
+    "level": "hardcore",
+    "question": "¿Qué grupo reúne tres sectores que necesitaban trabajadores capaces de utilizar maquinaria y equipos especializados?",
+    "options": [
+      "Industria, minería y energía.",
+      "Turismo, publicidad y hotelería.",
+      "Música, teatro y literatura.",
+      "Edición, traducción y periodismo."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Tres entre: industria, minería, energía, transporte y construcción.",
+    "sourceQuestion": "Menciona tres sectores que, según el texto, necesitaban trabajadores capaces de utilizar maquinaria y equipos especializados.",
+    "sourceAnswer": "Tres entre: industria, minería, energía, transporte y construcción."
+  },
+  {
+    "id": "tecnologia-hardcore-30",
+    "category": "tecnologia",
+    "level": "hardcore",
+    "question": "¿qué tres elementos del sector eléctrico y del transporte exigían conocimientos técnicos, además de los sistemas de mantenimiento?",
+    "options": [
+      "Instalaciones, redes eléctricas y vehículos.",
+      "Anuncios, catálogos y campañas.",
+      "Cultivos, riego y cosechas.",
+      "Reservas, itinerarios y alojamientos."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Instalaciones, redes eléctricas y vehículos.",
+    "sourceQuestion": "Según el texto, ¿qué tres elementos del sector eléctrico y del transporte exigían conocimientos técnicos, además de los sistemas de mantenimiento?",
+    "sourceAnswer": "Instalaciones, redes eléctricas y vehículos."
+  },
+  {
+    "id": "cultura-facil-31",
+    "category": "cultura",
+    "level": "facil",
+    "question": "¿La historia de INACAP ocurre principalmente en Chile o en España?",
+    "options": [
+      "En Chile.",
+      "En España."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En Chile.",
+    "sourceQuestion": "¿La historia del documento ocurre principalmente en Chile o en España?",
+    "sourceAnswer": "En Chile."
+  },
+  {
+    "id": "cultura-facil-32",
+    "category": "cultura",
+    "level": "facil",
+    "question": "Durante los años sesenta, ¿muchas personas se trasladaban del campo a la ciudad o de la ciudad al campo?",
+    "options": [
+      "Del campo a la ciudad.",
+      "De la ciudad al campo."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Del campo a la ciudad.",
+    "sourceQuestion": "Durante los años sesenta, ¿muchas personas se trasladaban del campo a la ciudad o de la ciudad al campo?",
+    "sourceAnswer": "Del campo a la ciudad."
+  },
+  {
+    "id": "cultura-facil-33",
+    "category": "cultura",
+    "level": "facil",
+    "question": "¿Chile buscaba modernizar su economía o dejar de producir?",
+    "options": [
+      "Modernizar su economía.",
+      "Dejar de producir."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Modernizar su economía.",
+    "sourceQuestion": "¿Chile buscaba modernizar su economía o dejar de producir?",
+    "sourceAnswer": "Modernizar su economía."
+  },
+  {
+    "id": "cultura-facil-34",
+    "category": "cultura",
+    "level": "facil",
+    "question": "¿Aprender un oficio podía ayudar a las personas a encontrar trabajo?",
+    "options": [
+      "Sí.",
+      "No."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sí.",
+    "sourceQuestion": "¿Aprender un oficio podía ayudar a las personas a encontrar trabajo?",
+    "sourceAnswer": "Sí."
+  },
+  {
+    "id": "cultura-facil-35",
+    "category": "cultura",
+    "level": "facil",
+    "question": "¿Los años setenta fueron una época de grandes cambios o una etapa sin transformaciones importantes?",
+    "options": [
+      "Una época de grandes cambios.",
+      "Una etapa sin transformaciones importantes."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Una época de grandes cambios.",
+    "sourceQuestion": "¿Los años setenta fueron una época de grandes cambios o una etapa sin transformaciones importantes?",
+    "sourceAnswer": "Una época de grandes cambios."
+  },
+  {
+    "id": "cultura-medio-36",
+    "category": "cultura",
+    "level": "medio",
+    "question": "¿Quién llegó a la presidencia de Chile en 1970?",
+    "options": [
+      "Salvador Allende.",
+      "Eduardo Frei Montalva.",
+      "Jorge Alessandri.",
+      "Patricio Aylwin."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Salvador Allende.",
+    "sourceQuestion": "¿Quién llegó a la presidencia de Chile en 1970?",
+    "sourceAnswer": "Salvador Allende."
+  },
+  {
+    "id": "cultura-medio-37",
+    "category": "cultura",
+    "level": "medio",
+    "question": "¿En qué año ocurrió el golpe de Estado?",
+    "options": [
+      "En 1973.",
+      "En 1963.",
+      "En 1968.",
+      "En 1978."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En 1973.",
+    "sourceQuestion": "¿En qué año ocurrió el golpe de Estado mencionado en el texto?",
+    "sourceAnswer": "En 1973."
+  },
+  {
+    "id": "cultura-medio-38",
+    "category": "cultura",
+    "level": "medio",
+    "question": "¿Quién encabezó la dictadura militar iniciada en 1973?",
+    "options": [
+      "Augusto Pinochet.",
+      "Carlos Ibáñez del Campo.",
+      "Jorge Alessandri.",
+      "Manuel Montt."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Augusto Pinochet.",
+    "sourceQuestion": "¿Quién encabezó la dictadura militar iniciada en 1973?",
+    "sourceAnswer": "Augusto Pinochet."
+  },
+  {
+    "id": "cultura-medio-39",
+    "category": "cultura",
+    "level": "medio",
+    "question": "¿Qué dos potencias se enfrentaban en la Guerra Fría?",
+    "options": [
+      "Estados Unidos y la Unión Soviética.",
+      "Francia y Alemania.",
+      "China y Japón.",
+      "España y Portugal."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Estados Unidos y la Unión Soviética.",
+    "sourceQuestion": "¿Qué dos potencias se enfrentaban en la Guerra Fría?",
+    "sourceAnswer": "Estados Unidos y la Unión Soviética."
+  },
+  {
+    "id": "cultura-medio-40",
+    "category": "cultura",
+    "level": "medio",
+    "question": "¿La sustitución de importaciones buscaba producir bienes en Chile o comprarlos todos en el extranjero?",
+    "options": [
+      "Producirlos en Chile.",
+      "Comprarlos todos en el extranjero."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Producirlos en Chile.",
+    "sourceQuestion": "¿La sustitución de importaciones buscaba producir bienes en Chile o comprarlos todos en el extranjero?",
+    "sourceAnswer": "Producirlos en Chile."
+  },
+  {
+    "id": "cultura-hardcore-41",
+    "category": "cultura",
+    "level": "hardcore",
+    "question": "¿Cómo se llamaba el proyecto político de Eduardo Frei Montalva?",
+    "options": [
+      "Revolución en Libertad.",
+      "La vía chilena al socialismo.",
+      "La República Parlamentaria.",
+      "El Nuevo Trato."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Revolución en Libertad.",
+    "sourceQuestion": "¿Cómo se llamaba el proyecto político de Eduardo Frei Montalva?",
+    "sourceAnswer": "Revolución en Libertad."
+  },
+  {
+    "id": "cultura-hardcore-42",
+    "category": "cultura",
+    "level": "hardcore",
+    "question": "¿Entre qué años gobernó Eduardo Frei Montalva?",
+    "options": [
+      "Entre 1964 y 1970.",
+      "Entre 1958 y 1964.",
+      "Entre 1970 y 1976.",
+      "Entre 1960 y 1966."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Entre 1964 y 1970.",
+    "sourceQuestion": "¿Entre qué años gobernó Eduardo Frei Montalva, según el documento?",
+    "sourceAnswer": "Entre 1964 y 1970."
+  },
+  {
+    "id": "cultura-hardcore-43",
+    "category": "cultura",
+    "level": "hardcore",
+    "question": "¿Qué día y mes ocurrió el golpe de Estado de 1973?",
+    "options": [
+      "El 11 de septiembre.",
+      "El 21 de mayo.",
+      "El 18 de septiembre.",
+      "El 21 de octubre."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: El 11 de septiembre.",
+    "sourceQuestion": "¿Qué día y mes ocurrió el golpe de Estado de 1973?",
+    "sourceAnswer": "El 11 de septiembre."
+  },
+  {
+    "id": "cultura-hardcore-44",
+    "category": "cultura",
+    "level": "hardcore",
+    "question": "¿Qué nombre recibe el proceso de crecimiento de las ciudades?",
+    "options": [
+      "Urbanización.",
+      "Ruralización.",
+      "Desindustrialización.",
+      "Descentralización."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Urbanización.",
+    "sourceQuestion": "¿Qué nombre recibe el proceso de crecimiento de las ciudades mencionado en el texto?",
+    "sourceAnswer": "Urbanización."
+  },
+  {
+    "id": "cultura-hardcore-45",
+    "category": "cultura",
+    "level": "hardcore",
+    "question": "Durante la segunda mitad de los años setenta, ¿Chile avanzó hacia una mayor apertura o un mayor cierre al comercio internacional?",
+    "options": [
+      "Hacia una mayor apertura.",
+      "Hacia un mayor cierre."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Hacia una mayor apertura.",
+    "sourceQuestion": "Durante la segunda mitad de los años setenta, ¿Chile avanzó hacia una mayor apertura o un mayor cierre al comercio internacional?",
+    "sourceAnswer": "Hacia una mayor apertura."
+  },
+  {
+    "id": "educacion-facil-46",
+    "category": "educacion",
+    "level": "facil",
+    "question": "¿La educación técnico-profesional prepara para el trabajo o para el turismo recreativo?",
+    "options": [
+      "Para el trabajo.",
+      "Para el turismo recreativo."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Para el trabajo.",
+    "sourceQuestion": "¿La educación técnico-profesional prepara para el trabajo o para el turismo recreativo?",
+    "sourceAnswer": "Para el trabajo."
+  },
+  {
+    "id": "educacion-facil-47",
+    "category": "educacion",
+    "level": "facil",
+    "question": "¿La formación técnica enseña habilidades prácticas o solamente conocimientos generales?",
+    "options": [
+      "Habilidades prácticas.",
+      "Solamente conocimientos generales."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Habilidades prácticas.",
+    "sourceQuestion": "¿La formación técnica enseña habilidades prácticas o solamente conocimientos generales?",
+    "sourceAnswer": "Habilidades prácticas."
+  },
+  {
+    "id": "educacion-facil-48",
+    "category": "educacion",
+    "level": "facil",
+    "question": "¿Antes de INACAP ya existían establecimientos de enseñanza técnica en Chile?",
+    "options": [
+      "Sí.",
+      "No."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sí.",
+    "sourceQuestion": "¿Antes de INACAP ya existían establecimientos de enseñanza técnica en Chile?",
+    "sourceAnswer": "Sí."
+  },
+  {
+    "id": "educacion-facil-49",
+    "category": "educacion",
+    "level": "facil",
+    "question": "¿La capacitación podía ayudar a los trabajadores a adaptarse a nuevas formas de trabajar?",
+    "options": [
+      "Sí.",
+      "No."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Sí.",
+    "sourceQuestion": "¿La capacitación podía ayudar a los trabajadores a adaptarse a nuevas formas de trabajar?",
+    "sourceAnswer": "Sí."
+  },
+  {
+    "id": "educacion-facil-50",
+    "category": "educacion",
+    "level": "facil",
+    "question": "¿La enseñanza técnica debía conectarse con tareas reales del trabajo o mantenerse alejada de ellas?",
+    "options": [
+      "Conectarse con tareas reales del trabajo.",
+      "Mantenerse alejada de ellas."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Conectarse con tareas reales del trabajo.",
+    "sourceQuestion": "¿La enseñanza técnica debía conectarse con tareas reales del trabajo o mantenerse alejada de ellas?",
+    "sourceAnswer": "Conectarse con tareas reales del trabajo."
+  },
+  {
+    "id": "educacion-medio-51",
+    "category": "educacion",
+    "level": "medio",
+    "question": "¿Qué significan las letras ETP?",
+    "options": [
+      "Educación técnico-profesional.",
+      "Enseñanza Teórica Primaria.",
+      "Educación Tecnológica Particular.",
+      "Escuela de Trabajadores Públicos."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Educación técnico-profesional.",
+    "sourceQuestion": "¿Qué significan las letras ETP?",
+    "sourceAnswer": "Educación técnico-profesional."
+  },
+  {
+    "id": "educacion-medio-52",
+    "category": "educacion",
+    "level": "medio",
+    "question": "¿Qué modalidad de enseñanza media se orientaba especialmente a preparar para el trabajo?",
+    "options": [
+      "La técnico-profesional.",
+      "La científico-humanista.",
+      "La formación preescolar.",
+      "La educación básica inicial."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La técnico-profesional.",
+    "sourceQuestion": "¿Qué modalidad de enseñanza media se orientaba especialmente a preparar para el trabajo?",
+    "sourceAnswer": "La técnico-profesional."
+  },
+  {
+    "id": "educacion-medio-53",
+    "category": "educacion",
+    "level": "medio",
+    "question": "¿Qué modalidad de enseñanza media se enfocaba en la formación general y la preparación para estudios superiores?",
+    "options": [
+      "La científico-humanista.",
+      "La técnico-profesional.",
+      "La capacitación en un oficio.",
+      "La formación de operarios."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La científico-humanista.",
+    "sourceQuestion": "¿Qué modalidad de enseñanza media se enfocaba en la formación general y la preparación para estudios superiores?",
+    "sourceAnswer": "La científico-humanista."
+  },
+  {
+    "id": "educacion-medio-54",
+    "category": "educacion",
+    "level": "medio",
+    "question": "¿La reforma educacional de 1965 buscaba aumentar o reducir la deserción escolar?",
+    "options": [
+      "Reducirla.",
+      "Aumentarla."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Reducirla.",
+    "sourceQuestion": "¿La reforma educacional buscaba aumentar o reducir la deserción escolar?",
+    "sourceAnswer": "Reducirla."
+  },
+  {
+    "id": "educacion-medio-55",
+    "category": "educacion",
+    "level": "medio",
+    "question": "¿Cuál de estas áreas se relacionaba con las especialidades técnico-profesionales?",
+    "options": [
+      "Industria.",
+      "Astrología.",
+      "Adivinación.",
+      "Alquimia."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Industria, agricultura, comercio o servicios.",
+    "sourceQuestion": "Menciona un área con la que se relacionaban las especialidades técnico-profesionales.",
+    "sourceAnswer": "Industria, agricultura, comercio o servicios."
+  },
+  {
+    "id": "educacion-hardcore-56",
+    "category": "educacion",
+    "level": "hardcore",
+    "question": "¿En qué año se impulsó la reforma educacional?",
+    "options": [
+      "En 1965.",
+      "En 1955.",
+      "En 1975.",
+      "En 1985."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En 1965.",
+    "sourceQuestion": "¿En qué año se impulsó la reforma educacional mencionada en el texto?",
+    "sourceAnswer": "En 1965."
+  },
+  {
+    "id": "educacion-hardcore-57",
+    "category": "educacion",
+    "level": "hardcore",
+    "question": "¿Cuáles fueron las dos grandes modalidades de educación media que distinguió la reforma de 1965?",
+    "options": [
+      "Científico-humanista y técnico-profesional.",
+      "Básica y preescolar.",
+      "Universitaria y de posgrado.",
+      "Presencial y a distancia."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Científico-humanista y técnico-profesional.",
+    "sourceQuestion": "Menciona las dos grandes modalidades de educación media que distinguió esa reforma.",
+    "sourceAnswer": "Científico-humanista y técnico-profesional."
+  },
+  {
+    "id": "educacion-hardcore-58",
+    "category": "educacion",
+    "level": "hardcore",
+    "question": "Además de reducir la deserción, ¿cuál era otro objetivo de la reforma educacional de 1965?",
+    "options": [
+      "Ampliar la cobertura escolar.",
+      "Reducir la cobertura escolar.",
+      "Eliminar la educación media.",
+      "Separar toda enseñanza de las tareas laborales."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Ampliar la cobertura escolar o reorganizar el sistema educativo.",
+    "sourceQuestion": "Además de reducir la deserción, menciona otro objetivo de la reforma educacional de 1965.",
+    "sourceAnswer": "Ampliar la cobertura escolar o reorganizar el sistema educativo."
+  },
+  {
+    "id": "educacion-hardcore-59",
+    "category": "educacion",
+    "level": "hardcore",
+    "question": "¿A partir de qué año comenzó la transferencia de la administración de algunos establecimientos públicos técnico-profesionales a entidades vinculadas con organizaciones empresariales?",
+    "options": [
+      "A partir de 1977.",
+      "A partir de 1957.",
+      "A partir de 1967.",
+      "A partir de 1987."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: A partir de 1977.",
+    "sourceQuestion": "¿A partir de qué año comenzó la transferencia de la administración de algunos establecimientos públicos técnico-profesionales a entidades vinculadas con organizaciones empresariales?",
+    "sourceAnswer": "A partir de 1977."
+  },
+  {
+    "id": "educacion-hardcore-60",
+    "category": "educacion",
+    "level": "hardcore",
+    "question": "¿Qué escuela agrícola se menciona como uno de los primeros casos de transferencia de administración de establecimientos técnico-profesionales iniciada en 1977?",
+    "options": [
+      "La Escuela Agrícola de San Fernando.",
+      "La Escuela Agrícola de Chillán.",
+      "La Escuela Agrícola de Talca.",
+      "La Escuela Agrícola de Los Ángeles."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La Escuela Agrícola de San Fernando.",
+    "sourceQuestion": "¿Qué escuela agrícola se menciona como uno de los primeros casos de esa transferencia?",
+    "sourceAnswer": "La Escuela Agrícola de San Fernando."
+  },
+  {
+    "id": "musica-facil-01",
+    "category": "musica",
+    "level": "facil",
+    "question": "¿Qué banda interpretaba «Bohemian Rhapsody»: Queen o The Beatles?",
+    "options": [
+      "Queen.",
+      "The Beatles."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Queen.",
+    "sourceQuestion": "¿Qué banda interpretaba «Bohemian Rhapsody»: Queen o The Beatles?",
+    "sourceAnswer": "Queen."
+  },
+  {
+    "id": "musica-facil-02",
+    "category": "musica",
+    "level": "facil",
+    "question": "¿Violeta Parra era una artista chilena o argentina?",
+    "options": [
+      "Chilena.",
+      "Argentina."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Chilena.",
+    "sourceQuestion": "¿Violeta Parra era una artista chilena o argentina?",
+    "sourceAnswer": "Chilena."
+  },
+  {
+    "id": "musica-facil-03",
+    "category": "musica",
+    "level": "facil",
+    "question": "¿Qué grupo interpretaba «Stayin’ Alive»: Bee Gees o ABBA?",
+    "options": [
+      "Bee Gees.",
+      "ABBA."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Bee Gees.",
+    "sourceQuestion": "¿Qué grupo interpretaba «Stayin’ Alive»: Bee Gees o ABBA?",
+    "sourceAnswer": "Bee Gees."
+  },
+  {
+    "id": "musica-facil-04",
+    "category": "musica",
+    "level": "facil",
+    "question": "¿Qué grupo chileno lanzó «Todos juntos» en 1972: Los Jaivas o Quilapayún?",
+    "options": [
+      "Los Jaivas.",
+      "Quilapayún."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Los Jaivas.",
+    "sourceQuestion": "¿Qué grupo chileno lanzó «Todos juntos» en 1972: Los Jaivas o Quilapayún?",
+    "sourceAnswer": "Los Jaivas."
+  },
+  {
+    "id": "musica-facil-05",
+    "category": "musica",
+    "level": "facil",
+    "question": "¿The Beatles era una banda británica o estadounidense?",
+    "options": [
+      "Británica.",
+      "Estadounidense."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Británica.",
+    "sourceQuestion": "¿The Beatles era una banda británica o estadounidense?",
+    "sourceAnswer": "Británica."
+  },
+  {
+    "id": "musica-medio-06",
+    "category": "musica",
+    "level": "medio",
+    "question": "¿Qué cantautora chilena compuso «Gracias a la vida», publicada en 1966?",
+    "options": [
+      "Violeta Parra.",
+      "Cecilia.",
+      "Isabel Parra.",
+      "Mercedes Sosa."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Violeta Parra.",
+    "sourceQuestion": "¿Qué cantautora chilena compuso «Gracias a la vida», publicada en 1966?",
+    "sourceAnswer": "Violeta Parra."
+  },
+  {
+    "id": "musica-medio-07",
+    "category": "musica",
+    "level": "medio",
+    "question": "¿Cómo se llamaba el cantante de Queen que compuso «Bohemian Rhapsody»?",
+    "options": [
+      "Freddie Mercury.",
+      "Brian May.",
+      "Roger Taylor.",
+      "John Deacon."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Freddie Mercury.",
+    "sourceQuestion": "¿Cómo se llamaba el cantante de Queen que compuso «Bohemian Rhapsody»?",
+    "sourceAnswer": "Freddie Mercury."
+  },
+  {
+    "id": "musica-medio-08",
+    "category": "musica",
+    "level": "medio",
+    "question": "¿Qué grupo sueco ganó Eurovisión en 1974 con «Waterloo»?",
+    "options": [
+      "ABBA.",
+      "Bee Gees.",
+      "Roxette.",
+      "Ace of Base."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: ABBA.",
+    "sourceQuestion": "¿Qué grupo sueco ganó Eurovisión en 1974 con «Waterloo»?",
+    "sourceAnswer": "ABBA."
+  },
+  {
+    "id": "musica-medio-09",
+    "category": "musica",
+    "level": "medio",
+    "question": "¿Qué cantautor chileno interpretó «Plegaria a un labrador» en el festival de 1969?",
+    "options": [
+      "Víctor Jara.",
+      "Patricio Manns.",
+      "Eduardo Gatti.",
+      "Víctor Heredia."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Víctor Jara.",
+    "sourceQuestion": "¿Qué cantautor chileno interpretó «Plegaria a un labrador» en el festival de 1969?",
+    "sourceAnswer": "Víctor Jara."
+  },
+  {
+    "id": "musica-medio-10",
+    "category": "musica",
+    "level": "medio",
+    "question": "¿A qué movimiento musical chileno pertenecían Cecilia, Buddy Richard y The Ramblers?",
+    "options": [
+      "La Nueva Ola.",
+      "La Nueva Canción Chilena.",
+      "El canto nuevo.",
+      "El rock progresivo."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: La Nueva Ola.",
+    "sourceQuestion": "¿A qué movimiento musical chileno pertenecían Cecilia, Buddy Richard y The Ramblers?",
+    "sourceAnswer": "La Nueva Ola."
+  },
+  {
+    "id": "musica-hardcore-11",
+    "category": "musica",
+    "level": "hardcore",
+    "question": "¿Qué conjunto interpretó la Cantata Santa María de Iquique en su estreno en 1970?",
+    "options": [
+      "Quilapayún.",
+      "Los Jaivas.",
+      "Inti-Illimani.",
+      "Los Huasos Quincheros."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Quilapayún.",
+    "sourceQuestion": "¿Qué conjunto interpretó la Cantata Santa María de Iquique en su estreno en 1970?",
+    "sourceAnswer": "Quilapayún."
+  },
+  {
+    "id": "musica-hardcore-12",
+    "category": "musica",
+    "level": "hardcore",
+    "question": "¿Cómo se llama el álbum que The Beatles publicó en 1969 y cuya portada muestra a sus integrantes cruzando una calle?",
+    "options": [
+      "Abbey Road.",
+      "Let It Be.",
+      "Revolver.",
+      "Rubber Soul."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Abbey Road.",
+    "sourceQuestion": "¿Cómo se llama el álbum que The Beatles publicó en 1969 y cuya portada muestra a sus integrantes cruzando una calle?",
+    "sourceAnswer": "Abbey Road."
+  },
+  {
+    "id": "musica-hardcore-13",
+    "category": "musica",
+    "level": "hardcore",
+    "question": "¿En qué año publicó Queen «Bohemian Rhapsody»?",
+    "options": [
+      "En 1975.",
+      "En 1971.",
+      "En 1973.",
+      "En 1977."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: En 1975.",
+    "sourceQuestion": "¿En qué año publicó Queen «Bohemian Rhapsody»?",
+    "sourceAnswer": "En 1975."
+  },
+  {
+    "id": "musica-hardcore-14",
+    "category": "musica",
+    "level": "hardcore",
+    "question": "¿Qué conjunto acompañó a Víctor Jara cuando interpretó «Plegaria a un labrador» en el Primer Festival de la Nueva Canción Chilena?",
+    "options": [
+      "Quilapayún.",
+      "Los Jaivas.",
+      "Inti-Illimani.",
+      "Los Cuatro Cuartos."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Quilapayún.",
+    "sourceQuestion": "¿Qué conjunto acompañó a Víctor Jara cuando interpretó «Plegaria a un labrador» en el Primer Festival de la Nueva Canción Chilena?",
+    "sourceAnswer": "Quilapayún."
+  },
+  {
+    "id": "musica-hardcore-15",
+    "category": "musica",
+    "level": "hardcore",
+    "question": "¿Qué película de 1977 incluyó «Stayin’ Alive» de Bee Gees en su banda sonora?",
+    "options": [
+      "Fiebre de sábado por la noche (Saturday Night Fever).",
+      "Grease.",
+      "Fama.",
+      "Flashdance."
+    ],
+    "answer": 0,
+    "explanation": "Respuesta: Fiebre de sábado por la noche (Saturday Night Fever).",
+    "sourceQuestion": "¿Qué película de 1977 incluyó «Stayin’ Alive» de Bee Gees en su banda sonora?",
+    "sourceAnswer": "Fiebre de sábado por la noche (Saturday Night Fever)."
+  }
+]
