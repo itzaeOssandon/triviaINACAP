@@ -1,11 +1,21 @@
-import { get, put, del, list, BlobPreconditionFailedError } from '@vercel/blob';
+import { get, put, del, list, head, BlobNotFoundError, BlobPreconditionFailedError } from '@vercel/blob';
 import bank from '../src/questions.json' with { type:'json' };
 import { GameError } from '../lib/duel.js';
 import { tokenHash,playerId,newLiveToken,newPin,livePath,playersPrefix,answersPrefix,answerPath,safeName,registrationPath,parseRegistrations,createLiveRoom,actorFor,revealLiveRound,applyHostAction,liveView } from '../lib/live.js';
 
 export const config={maxDuration:60};
-export function makeLiveHandler(storage={get,put,del,list}, clock=Date.now) {
-  const read=async path=>{const r=await storage.get(path,{access:'private',useCache:false});return r?{data:await new Response(r.stream).json(),etag:r.blob.etag}:null;};
+export function makeLiveHandler(storage={get,put,del,list,head}, clock=Date.now) {
+  const read=async (path,versioned=false)=>{
+    // Read the storage version before its content. HTTP download ETags can differ
+    // from the canonical version accepted by conditional uploads.
+    let etag;
+    if(versioned){
+      try{etag=(await storage.head(path)).etag;}catch(error){if(error instanceof BlobNotFoundError)return null;throw error;}
+      if(!etag)throw new GameError('No pudimos verificar la versión de la sala. Inténtalo nuevamente.',503);
+    }
+    const r=await storage.get(path,{access:'private',useCache:false});
+    return r?{data:await new Response(r.stream).json(),etag:versioned?etag:r.blob.etag}:null;
+  };
   async function all(prefix) {const blobs=[];let cursor;do{const page=await storage.list({prefix,limit:1000,...(cursor?{cursor}:{})});blobs.push(...page.blobs);cursor=page.hasMore?page.cursor:undefined;}while(cursor);return blobs;}
   const rosterFor=async room=>room.status==='lobby'?parseRegistrations(await all(playersPrefix(room.code))):room.roster;
   const immutable=async(path,data)=>{try{await storage.put(path,JSON.stringify(data),{access:'private',addRandomSuffix:false,allowOverwrite:false,contentType:'application/json'});}catch(error){const existing=await read(path);if(!existing)throw error;return existing.data;}return data;};
@@ -29,11 +39,12 @@ export function makeLiveHandler(storage={get,put,del,list}, clock=Date.now) {
       try{await storage.get('health/connectivity.json',{access:'private',useCache:false});await storage.list({prefix:'health/',limit:1});return res.status(200).json({live:'ready'});}catch{return res.status(503).json({live:'unavailable'});}
     }
     if(req.method!=='POST'){res.setHeader('Allow','POST');return res.status(405).json({error:'Usa POST.'});}
+    let actionForLog, codeForLog;
     try {
       if(Number(req.headers['content-length']||0)>2048)throw new GameError('Solicitud demasiado grande.',413);
       let body;try{body=typeof req.body==='string'?JSON.parse(req.body):req.body;}catch{throw new GameError('Los datos no son válidos.');}
       if(!body||typeof body!=='object')throw new GameError('Faltan los datos de la sala.');
-      const {action}=body;
+      const {action}=body;actionForLog=action;
       if(!['create','join','state','start','answer','reveal','next','leave','cancel'].includes(action))throw new GameError('Acción no válida.');
       if(action==='create') {
         const token=newLiveToken();
@@ -46,11 +57,11 @@ export function makeLiveHandler(storage={get,put,del,list}, clock=Date.now) {
         }
         throw new GameError('No pudimos generar el código. Inténtalo de nuevo.',503);
       }
-      const code=String(body.code||'').trim();if(!/^\d{6}$/.test(code))throw new GameError('Introduce el código de 6 dígitos.');
+      const code=String(body.code||'').trim();if(!/^\d{6}$/.test(code))throw new GameError('Introduce el código de 6 dígitos.');codeForLog=code;
       const token=body.token;if(typeof token!=='string'||!/^[a-f0-9]{48}$/.test(token))throw new GameError('La sesión no es válida. Vuelve a entrar.',401);
       const receivedAt=clock();
       for(let attempt=0;attempt<5;attempt++) {
-        const saved=await read(livePath(code));if(!saved)throw new GameError('No encontramos esa sala. Revisa el código.',404);
+        const saved=await read(livePath(code),true);if(!saved)throw new GameError('No encontramos esa sala. Revisa el código.',404);
         const room=saved.data;if(room.expiresAt<=receivedAt)throw new GameError('La sala expiró. Crea una nueva.',410);
         let roster=await rosterFor(room);
         if(action==='join') {
@@ -89,12 +100,13 @@ export function makeLiveHandler(storage={get,put,del,list}, clock=Date.now) {
         if(JSON.stringify(room)!==before) {
           room.revision++;
           try{await storage.put(livePath(code),JSON.stringify(room),{access:'private',addRandomSuffix:false,allowOverwrite:true,ifMatch:saved.etag,contentType:'application/json'});}
-          catch(error){if(error instanceof BlobPreconditionFailedError)continue;throw error;}
+          catch(error){if(error instanceof BlobPreconditionFailedError){if(attempt===4)console.warn('live-write-conflict',JSON.stringify({action,code,revision:room.revision,hasEtag:Boolean(saved.etag)}));continue;}throw error;}
         }
+        if(['start','next','reveal','cancel'].includes(action))console.info('live-host-action',JSON.stringify({action,code,status:room.status,phase:room.phase,index:room.index,revision:room.revision}));
         return res.status(200).json(await buildView(room,actor,roster,entries&&room.index===originalIndex?entries:undefined));
       }
       throw new GameError('La sala se está actualizando. Inténtalo de nuevo.',409);
-    }catch(error){if(!(error instanceof GameError))console.error('live-api',error.name,error.message);return res.status(error instanceof GameError?error.status:503).json({error:error instanceof GameError?error.message:'No pudimos conectar con la sala. Inténtalo de nuevo.'});}
+    }catch(error){if(error instanceof GameError&&['start','next','reveal'].includes(actionForLog))console.warn('live-host-action-failed',JSON.stringify({action:actionForLog,code:codeForLog,status:error.status,reason:error.message}));if(!(error instanceof GameError))console.error('live-api',error.name,error.message);return res.status(error instanceof GameError?error.status:503).json({error:error instanceof GameError?error.message:'No pudimos conectar con la sala. Inténtalo de nuevo.'});}
   };
 }
 export default makeLiveHandler();

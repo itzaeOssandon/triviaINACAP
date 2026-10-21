@@ -1,13 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { BlobPreconditionFailedError } from '@vercel/blob';
+import { BlobNotFoundError, BlobPreconditionFailedError } from '@vercel/blob';
 import { makeLiveHandler } from '../api/live.js';
 import { livePath,answerPath,playerId,rankPlayers } from '../lib/live.js';
 
 function fixture() {
   let now=1_800_000_000_000,seq=0;const files=new Map();
   const storage={
-    async get(path){const b=files.get(path);return b?{stream:new Blob([b.text]).stream(),blob:{etag:b.etag}}:null;},
+    async head(path){const b=files.get(path);if(!b)throw new BlobNotFoundError();return {etag:b.etag};},
+    async get(path){const b=files.get(path);return b?{stream:new Blob([b.text]).stream(),blob:{etag:`W/\"download-${b.etag}\"`}}:null;},
     async put(path,text,opts){const old=files.get(path);if(opts.ifMatch&&old?.etag!==opts.ifMatch)throw new BlobPreconditionFailedError();if(old&&!opts.allowOverwrite)throw new Error('Already exists');files.set(path,{text,etag:String(++seq),uploadedAt:new Date(now+seq)});},
     async del(path){files.delete(path);},
     async list({prefix,cursor,limit=1000}){const matches=[...files].filter(([path])=>path.startsWith(prefix));const start=Number(cursor||0),page=matches.slice(start,start+limit);return {blobs:page.map(([pathname,b])=>({pathname,uploadedAt:b.uploadedAt})),hasMore:start+limit<matches.length,cursor:String(start+limit)};}

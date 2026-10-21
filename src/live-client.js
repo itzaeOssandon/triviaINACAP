@@ -4,14 +4,14 @@ const marks=['▲','◆','●','■'];
 const savedKey='inacap-live-v2';
 
 export function createLiveUI({shell,escape:esc,focusHeading,getLevel,onEnter,onHome}) {
-  let session=null,state=null,active=false,generation=0,pollTimer,clockTimer,chain=Promise.resolve(),pending=false,offset=0,failures=0,renderKey='';
+  let session=null,state=null,active=false,generation=0,pollTimer,clockTimer,chain=Promise.resolve(),pending=false,offset=0,failures=0,renderKey='',actionError='';
   const qrCache=new Map();
   const save=value=>{try{value?sessionStorage.setItem(savedKey,JSON.stringify(value)):sessionStorage.removeItem(savedKey);}catch{}};
   const message=text=>{const n=document.querySelector('#live-notice');if(n)n.textContent=text;};
   const setRole=role=>{document.body.classList.toggle('live-presenter',role==='host');onEnter();};
   function stop(){active=false;clearTimeout(pollTimer);clearInterval(clockTimer);}
   function close(){
-    generation++;stop();const old=session;session=null;state=null;renderKey='';pending=false;save(null);document.body.classList.remove('live-presenter');
+    generation++;stop();actionError='';const old=session;session=null;state=null;renderKey='';pending=false;save(null);document.body.classList.remove('live-presenter');
     if(old)fetch('/api/live',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:old.code,token:old.token,action:'leave'}),keepalive:true}).catch(()=>{});
   }
   async function request(action,extra={}) {
@@ -22,7 +22,7 @@ export function createLiveUI({shell,escape:esc,focusHeading,getLevel,onEnter,onH
     offset=data.serverNow-(sent+Date.now())/2;return data;
   }
   function setup(role='host',code='') {
-    const page=++generation;stop();session=null;state=null;pending=false;renderKey='';chain=Promise.resolve();setRole(role);
+    const page=++generation;stop();session=null;state=null;pending=false;renderKey='';actionError='';chain=Promise.resolve();setRole(role);
     const host=role==='host';
     const joinToken=host?undefined:Array.from(crypto.getRandomValues(new Uint8Array(24)),b=>b.toString(16).padStart(2,'0')).join('');
     shell(`<main id="main" class="live-setup ${host?'host-setup':''}"><span class="eyebrow">${host?'LA PANTALLA GRANDE ES TU ESCENARIO':'TU TELÉFONO, TU PULSADOR'}</span><h1 tabindex="-1">${host?'Que empiece el show.':'Entra en la onda.'}</h1><p>${host?'Conecta el computador a la televisión, crea una sala y deja que el público se una con el código o el QR. Tú decides cuándo comenzar.':'Escanea el QR de la pantalla o introduce el código. Elige tu apodo y prepárate para viajar a los 60 y 70.'}</p>
@@ -45,26 +45,26 @@ export function createLiveUI({shell,escape:esc,focusHeading,getLevel,onEnter,onH
   async function poll(){
     if(!active)return;if(pending){schedule();return;}
     await enqueue(async page=>{
-      try{const data=await request('state');if(page!==generation||!active)return;failures=0;applyState(data);message('');}
+      try{const data=await request('state');if(page!==generation||!active)return;failures=0;applyState(data);message(actionError);}
       catch(error){if(page!==generation||!active)return;failures++;message([401,403,404,410].includes(error.status)?error.message:'Conexión interrumpida. Reintentando… Mantén esta pestaña abierta para recuperar tu sesión.');if([401,403,404,410].includes(error.status)){stop();save(null);}}
     });schedule();
   }
   function act(action,extra={}) {
-    if(pending||!active)return;pending=true;tick();document.querySelectorAll('[data-host-action]').forEach(b=>b.disabled=true);
+    if(pending||!active)return;actionError='';message(action==='start'?'Iniciando el show…':'Actualizando la sala…');pending=true;tick();document.querySelectorAll('[data-host-action]').forEach(b=>b.disabled=true);
     void enqueue(async page=>{
       try{const data=await request(action,extra);if(page===generation&&active){pending=false;renderKey='';applyState(data);message('');}}
-      catch(error){if(page===generation&&active){pending=false;renderKey='';render();message(error.message);}}
+      catch(error){if(page===generation&&active){pending=false;actionError=error.message;renderKey='';render();message(actionError);}}
       finally{if(page===generation){pending=false;tick();}}
     });
   }
   function applyState(data){
-    const previous=state;state=data;setRole(data.role);
+    const previous=state;if(previous&&(previous.status!==data.status||previous.phase!==data.phase||previous.index!==data.index))actionError='';state=data;setRole(data.role);
     const key=JSON.stringify([data.role,data.status,data.phase,data.index,data.revision,data.players,data.ownAnswer]);
     if(key!==renderKey&&!document.querySelector('dialog[open]')){
       if(previous?.status==='lobby'&&data.status==='lobby'&&document.querySelector('.live-lobby')){
         document.querySelector('#audience-title').innerHTML=`<strong>${data.playerCount}</strong> participantes en la onda`;
         document.querySelector('.audience-names').innerHTML=data.players.length?data.players.map(p=>`<span>${esc(p.name)}</span>`).join(''):'<p>Esperando a los primeros viajeros…</p>';
-        document.querySelector('[data-host-action="start"]').disabled=data.playerCount<1;
+        document.querySelector('[data-host-action="start"]').disabled=pending||data.playerCount<1;
       }else if(previous?.status==='lobby'&&data.status==='lobby'&&document.querySelector('.player-ticket')){
         document.querySelector('.player-ticket span').textContent=`${data.playerCount} participantes · Nivel ${levelName()}`;
       }else render();
