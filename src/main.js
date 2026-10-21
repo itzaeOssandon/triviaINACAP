@@ -1,4 +1,4 @@
-import { createDuelUI } from "./duel-client.js";
+import { createLiveUI } from "./live-client.js";
 import bank from "./questions.json";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/outfit";
@@ -41,7 +41,7 @@ let answered = false;
 let deadline = 0;
 let interval;
 let remaining = QUESTION_SECONDS;
-const duel = createDuelUI({ shell, escape, focusHeading, getLevel: () => level, onEnter: () => { clearInterval(interval); screen = "duel"; }, onHome: () => renderHome(true) });
+const live = createLiveUI({ shell, escape, focusHeading, getLevel: () => level, onEnter: () => { clearInterval(interval); screen = "live"; }, onHome: () => renderHome(true) });
 
 function readBest() {
   try {
@@ -96,7 +96,7 @@ function shell(content) {
   });
   app.querySelector(".brand").addEventListener("click", (event) => {
     event.preventDefault();
-    if (screen === "quiz" || screen === "duel") confirmExit();
+    if (screen === "quiz" || screen === "live") confirmExit();
     else renderHome();
   });
   app.querySelector("#exit-dialog").addEventListener("close", (event) => {
@@ -110,7 +110,7 @@ function focusHeading() {
 }
 
 function renderHome(focus = false) {
-  duel.close();
+  live.close();
   clearInterval(interval);
   screen = "home";
   shell(`<main id="main" class="home">
@@ -136,7 +136,7 @@ function renderHome(focus = false) {
       ).join("")}</fieldset>
         <div class="start-block"><button class="primary-button start-button" id="start">¡A jugar! ${icons.arrow}</button><span class="start-note">${icons.clock} 20 segundos por pregunta</span></div>
       </div>
-      <div class="mode-switch"><div><strong>Individual</strong><p>Gana con al menos 3 respuestas correctas de 5.</p></div><button id="duel-mode" class="secondary-button">2 jugadores · Jugar desde el teléfono</button></div>
+      <div class="group-mode"><div><span class="eyebrow">EL PÚBLICO TAMBIÉN JUEGA</span><h3>Una pantalla. Toda una generación.</h3><p>Presenta en la televisión y deja que el público se una desde el teléfono, con código o QR.</p></div><div class="group-mode-actions"><button id="host-mode" class="primary-button">Crear sala · Presentador</button><button id="join-mode" class="secondary-button">Ingresar con código</button></div></div><p class="solo-target-note">En modo individual, gana con al menos 3 respuestas correctas de 5.</p>
       <div class="best-line" id="best-line">Récord ${LEVELS.find((l) => l.id === level).label.toLowerCase()} en este dispositivo: <strong>${bestForLevel().toLocaleString("es-CL")} pts</strong></div>
     </section>
     <section class="category-section" aria-labelledby="categories-title"><div class="category-heading"><span class="eyebrow" id="categories-title">CINCO PARADAS EN EL TIEMPO</span><span>Una pregunta al azar de cada categoría.</span></div><div class="category-list">${CATEGORIES.map((c) => `<div class="category-item"><span class="category-symbol ${c.color}" aria-hidden="true">${c.symbol}</span><span>${c.label}</span></div>`).join("")}</div></section>
@@ -155,7 +155,8 @@ function renderHome(focus = false) {
     }),
   );
   document.querySelector("#start").addEventListener("click", startGame);
-  document.querySelector("#duel-mode").addEventListener("click", () => duel.setup());
+  document.querySelector("#host-mode").addEventListener("click", () => live.setup("host"));
+  document.querySelector("#join-mode").addEventListener("click", () => live.setup("player"));
   if (focus) focusHeading();
 }
 
@@ -324,8 +325,8 @@ document.addEventListener("fullscreenchange", () => {
 try {
   validateBank(bank);
   const invitation = new URLSearchParams(location.search).get("sala");
-  if (invitation) duel.setup(invitation);
-  else duel.restore().then(restored => { if (!restored) renderHome(); });
+  if (invitation) live.setup("player", invitation);
+  else live.restore().then(restored => { if (!restored) renderHome(); });
 } catch (error) {
   showError(error);
 }

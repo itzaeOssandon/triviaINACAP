@@ -1,6 +1,6 @@
 # La máquina del tiempo · Trivia INACAP
 
-Trivia individual para el stand de INACAP, inspirada en la estética de los años 60 y 70. Funciona en teléfonos, tablets y computadores, sin cuentas para los visitantes. El modo individual funciona en el navegador; el duelo usa una API de Vercel y almacenamiento privado de salas.
+Trivia para el stand de INACAP, inspirada en la estética de los años 60 y 70. Funciona en teléfonos, tablets y computadores, sin cuentas para los visitantes. El modo individual funciona en el navegador; la sala con presentador usa una API de Vercel y almacenamiento privado.
 
 ## Jugar
 
@@ -14,18 +14,22 @@ Trivia individual para el stand de INACAP, inspirada en la estética de los año
 
 El banco contiene las **75 preguntas entregadas para el stand**: 15 por categoría y cinco por cada dificultad dentro de cada categoría. Las respuestas se conservaron; se añadieron alternativas incorrectas para permitir la selección. Algunas consignas se adaptaron a opción múltiple y se retiraron referencias a un documento que el jugador no tiene a la vista. Los campos `sourceQuestion` y `sourceAnswer` conservan el texto original.
 
-## Dos jugadores desde sus teléfonos
+## Sala con presentador y público
 
-1. En el inicio, seleccionar el nivel y pulsar **2 jugadores**.
-2. El primer jugador ingresa su apodo y crea una sala.
-3. Comparte el enlace o el código de 10 caracteres con el segundo jugador.
-4. El creador inicia el duelo cuando ambos aparecen en la sala.
-5. Ambos reciben las mismas cinco preguntas y tienen 20 segundos por ronda. Las respuestas se revelan cuando ambos responden o se acaba el tiempo. Ambos deben pulsar Siguiente para avanzar.
-6. Gana el mayor puntaje total. Si los puntajes coinciden, se informa empate. Si alguien sale, se informa partida interrumpida sin asignar ganador.
+1. En el computador conectado a la televisión, pulsar **Crear sala · Presentador** y elegir la dificultad. No se pide una cantidad de jugadores.
+2. La sala muestra un **PIN de seis dígitos**, un **QR grande** y los apodos de los participantes. El QR abre directamente el ingreso a esa sala; solo falta escribir un apodo. También se puede usar **Ingresar con código** desde el inicio.
+3. El presentador pulsa **¡Comenzar el show!** cuando esté listo. Se requiere al menos un participante; el presentador no ocupa un lugar en el ranking. El ingreso se cierra al comenzar.
+4. La televisión muestra las preguntas y alternativas grandes. Los teléfonos muestran botones con las mismas alternativas, formas y colores. Hay 20 segundos por pregunta y una única respuesta por participante.
+5. La respuesta correcta y la explicación se muestran cuando todos respondieron, se agotó el tiempo o el presentador pulsa **Cerrar respuestas**. Solo el presentador avanza a la siguiente pregunta.
+6. Tras la quinta pregunta, **Ver podio y ranking** muestra a los tres primeros en un podio retro con vinilos y flores, y al resto en una lista lateral con posición y puntaje. Con menos de tres participantes, los lugares vacíos se identifican como tales.
 
-En individual se gana con **3 respuestas correctas de 5**. Los textos de apoyo y explicaciones se ampliaron para facilitar la lectura.
+Se conservan cinco preguntas por partida, una de cada categoría del nivel elegido. El puntaje premia los aciertos y la rapidez. Los empates se ordenan por aciertos, menor tiempo total de respuesta, orden de ingreso y un identificador estable si coinciden todos esos criterios. El teléfono muestra también la posición personal al finalizar.
 
-Las salas se guardan en Vercel Blob privado mediante escrituras condicionales por ETag, que evitan perder respuestas simultáneas. La API calcula el puntaje y comprueba el tiempo en el servidor; nunca acepta puntajes enviados por el navegador. Los teléfonos se sincronizan cada 1,5 segundos, conservan la sesión al recargar y no necesitan estar en la misma red. Las salas expiran después de una hora; un acceso posterior elimina su archivo. Los archivos de salas que no se vuelven a consultar permanecen en el almacenamiento hasta su limpieza administrativa.
+La sala utiliza Vercel Blob privado. Las inscripciones y respuestas son archivos independientes e inmutables: las respuestas simultáneas no compiten por sobrescribir un único archivo. El estado del presentador y los puntajes se guardan con escrituras condicionales por ETag para evitar dobles avances o dobles puntuaciones. La API valida la identidad del presentador, el tiempo y la respuesta; el navegador no puede enviar su propio puntaje. El QR se genera en el navegador sin servicios externos.
+
+Los teléfonos y el computador necesitan Internet, pero pueden estar en redes distintas. Las sesiones se recuperan al recargar la misma pestaña. Salir desde un teléfono no cierra la partida de los demás; los participantes ausentes suman cero en las preguntas sin responder. El presentador puede cerrar la sala para todos. Las salas expiran después de dos horas; sus archivos privados permanecen en almacenamiento hasta su limpieza administrativa. No hay un número predeterminado de participantes ni un selector de capacidad. Las pruebas de concurrencia incluyen 40 participantes simulados; esto no constituye una garantía de carga ilimitada.
+
+En individual se gana con **3 respuestas correctas de 5**. El modo anterior de duelo permanece en sus archivos y endpoint para compatibilidad con pestañas antiguas; la interfaz principal utiliza la nueva sala con presentador.
 
 ## Desarrollo local
 
@@ -43,7 +47,7 @@ npm run build
 npm run preview
 ```
 
-Las tipografías se sirven desde la propia aplicación. El modo individual no requiere claves ni variables de entorno. El duelo usa `BLOB_READ_WRITE_TOKEN`, configurada únicamente en Vercel, y una conexión a Internet. Nunca debe incluirse la credencial en archivos del frontend o en el repositorio. `npm run dev` sirve el frontend y el modo individual; para usar la API local, utilizar `vercel dev` con acceso al proyecto y su almacén privado. La primera carga requiere conexión; no se implementa un modo sin conexión.
+Las tipografías se sirven desde la propia aplicación. El modo individual no requiere claves ni variables de entorno. La sala usa `BLOB_READ_WRITE_TOKEN`, configurada únicamente en Vercel, y una conexión a Internet. Nunca debe incluirse la credencial en archivos del frontend o en el repositorio. `npm run dev` sirve el frontend y el modo individual; para usar la API local, utilizar `vercel dev` con acceso al proyecto y su almacén privado. La primera carga requiere conexión; no se implementa un modo sin conexión.
 
 ## Editar las preguntas
 
@@ -89,14 +93,16 @@ En este entorno cloud ya está disponible Chromium. Para usarlo sin descargar ot
 
 1. Subir los archivos de este proyecto a un repositorio propio en GitHub.
 2. En Vercel, elegir **Add New → Project** e importar ese repositorio con la cuenta que tenga acceso.
-3. Usar la raíz del repositorio como Root Directory. El archivo `vercel.json` configura Vite, `npm run build` y la salida `dist`. Para el duelo se requiere el almacén Blob privado conectado al proyecto; Vercel inyecta su variable de entorno. El modo individual funciona sin ella.
+3. Usar la raíz del repositorio como Root Directory. El archivo `vercel.json` configura Vite, `npm run build` y la salida `dist`. Para la sala se requiere el almacén Blob privado conectado al proyecto; Vercel inyecta su variable de entorno. El modo individual funciona sin ella.
 4. Pulsar **Deploy**. Vercel asignará una URL pública HTTPS que se puede usar en un QR para el stand.
 5. Abrir la URL pública en el dispositivo del stand y comprobar una partida. Los siguientes cambios en la rama de producción se publicarán mediante la integración de Git.
 
 Alternativa desde una máquina con la CLI de Vercel autenticada: `npx vercel --prod`. Este repositorio no contiene credenciales de despliegue.
 
-El modo individual incluye las respuestas en los archivos del navegador; la aplicación está pensada para una actividad recreativa presencial. El duelo tiene salas privadas de dos jugadores con cálculo del resultado en el servidor. No incluye un ranking global. El frontend se construye en `dist`; Vercel despliega además `api/duel.js`, `lib/duel.js` y el SDK de Blob.
+El modo individual incluye las respuestas en los archivos del navegador; la aplicación está pensada para una actividad recreativa presencial. La sala con presentador calcula el ranking de su partida en el servidor. No incluye un ranking global entre salas. El frontend se construye en `dist`; Vercel despliega además `api/live.js`, `lib/live.js` y el SDK de Blob. Los endpoints del duelo anterior se conservan para compatibilidad.
 
 ## Logo histórico
 
 `public/logo-inacap-historico.jpg` es el archivo original proporcionado por el organizador en `logoinacap.zip`, sin recortes ni retoques. La cabecera conserva su proporción en escritorio y teléfono; se utiliza también como favicon.
+
+Las pruebas de la sala cubren ingreso de 40 participantes en paralelo, respuestas concurrentes e inmutables, solicitudes repetidas del presentador, control de acceso, cierre de ingreso, cinco rondas, tiempos agotados, clasificación completa, desempates y recuperación de sesión. La validación automatizada no sustituye una prueba del montaje real de televisión y teléfonos antes del evento.
