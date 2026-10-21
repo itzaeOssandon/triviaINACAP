@@ -24,12 +24,28 @@ jobs:
           }
           try {
             const created=await call('create',{}, {level:'facil'});host={code:created.code,token:created.token};
-            for(let i=0;i<2;i++)await call('join',{code:host.code,token:randomBytes(24).toString('hex')},{name:`Prueba tecnica ${i+1}`});
+            const players=[];
+            for(let i=0;i<2;i++){
+              const player={code:host.code,token:randomBytes(24).toString('hex')};players.push(player);
+              await call('join',player,{name:`Prueba tecnica ${i+1}`});
+            }
             await call('state',host);
             const started=await call('start',host);
             if(started.status!=='playing'||started.phase!=='question')throw new Error('Start did not transition to the first question');
             const state=await call('state',host);
             if(state.status!=='playing')throw new Error('The start was not persisted');
+            for(const player of players){const state=await call('state',player);if(state.status!=='playing'||state.question.question!==started.question.question)throw new Error('Player did not receive first question');}
             console.log('PRODUCTION_START_OK');
+            let round=started;
+            for(let index=0;index<5;index++){
+              await new Promise(resolve=>setTimeout(resolve,Math.max(0,round.opensAt-Date.now()+250)));
+              await Promise.all(players.map(player=>call('answer',player,{index,selected:0})));
+              const feedback=await call('state',host);
+              if(feedback.phase!=='feedback'||feedback.answerCount!==2)throw new Error('Round did not reveal two answers');
+              round=await call('next',host,{index});
+              if(index<4&&round.index!==index+1)throw new Error('Next question did not persist');
+            }
+            if(round.status!=='finished'||round.ranking.length!==2)throw new Error('Final ranking missing');
+            console.log('PRODUCTION_FIVE_ROUNDS_AND_RANKING_OK');
           }finally{if(host)try{await call('cancel',host);}catch(e){console.log('Cleanup failed:',e.message);}}
           JS
